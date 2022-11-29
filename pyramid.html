@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Interactive Pyramid</title>
+    <style>
+        body {
+            zoom: 90%;
+        }
+
+        canvas {
+            position: absolute;
+            left: 53%;
+            margin-left: -18.5%;
+            padding: 0.8%;
+            background-color: rgb(255, 196, 10);
+        }
+    </style>
+</head>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body style="padding-left: 10px;">
+    <h1 style='text-align:center;'> Interactive Pyramid <br>20010026 阿吉兹</h1>
+    <canvas id="canvas" width=500 height=500></canvas>
+
+    <script src="../lib/webgl.js"></script>
+    <script src="../lib/matrix.js"></script>
+    <script src="../lib/shape.js"></script>
+    <script src="pyramid.js"></script>
+
+    <div class="slidefovcontainer" style="display: inline-flex;">
+        FOV Slider 0 &nbsp <input type="range" min="1" max="100" id="fovSlider" style="width:250px;">&nbsp 100<br>
+
+    </div>
+    <br>
+    <div class="slidelightcontainer" style="display: inline-flex;">
+
+        Light Slider 0 &nbsp<input type="range" min="0" max="1" id="lightSlider" style="width:250px;" step="0.1">&nbsp 1
+    </div>
+    <div>
+        <h2>Animation</h2>
+        <button type="button" class="btn btn-success" id="startAnimation">Start</button>
+        <button type="button" class="btn btn-danger" id="stopAnimation">Stop</button>
+    </div>
+    <div class="slidecontainer">
+        <br>
+        <h2>Translation</h2>
+
+        <button type="button" class="btn btn-primary" id="moveUP"
+            Style="position:fixed; top:320px; left:100px">UP</button>
+        <button type="button" class="btn btn-primary" id="moveDOWN"
+            Style="position:fixed; left:87px; bottom:380px">DOWN</button>
+
+        <button type="button" class="btn btn-primary" id="moveLeft"
+            Style="position:fixed; left:160px; bottom:420px">RIGHT</button>
+        <button type="button" class="btn btn-primary" id="moveRight"
+            Style="position:fixed; left:20px; bottom:420px">LEFT</button>
+    </div>
+
+    <div style="margin-top:150px;">
+        <h2>Rotation</h2>
+        <button type="button" class="btn btn-info" id="xRotation">X Rotation</button>
+        <button type="button" class="btn btn-info" id="yRotation">Y Rotation</button>
+        <button type="button" class="btn btn-info" id="zRotation">Z Rotation</button>
+    </div>
+
+    <div style="margin-top:50px;">
+        <h2>Projection</h2>
+        <button type="button" class="btn btn-info" id="view1">Front Elevation</button>
+        <button type="button" class="btn btn-info" id="view2">Elevation Oblique</button>
+        <button type="button" class="btn btn-info" id="view3">Plan Oblique</button><br><br>
+        <button type="button" class="btn btn-info" id="view4">Isometric</button>
+        <button type="button" class="btn btn-info" id="view5">One-Point Perspective</button>
+        <button type="button" class="btn btn-info" id="view6">Three-Point Perspective</button>
+    </div>
+
+</body>
+
+</html>
